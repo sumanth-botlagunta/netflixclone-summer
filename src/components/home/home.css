@@ -1,0 +1,37 @@
+.row_movies {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.row_movies::-webkit-scrollbar {
+  display: none;
+}
+
+.row > h2 {
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+.mask {
+  margin-left: 1rem;
+  border: 1px solid black;
+  border-radius: 3%;
+  background: linear-gradient(to top, #000000, transparent 100%);
+}
+
+.movieImage {
+  width: 267px;
+  height: 150px;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.hover {
+  color: white;
+  font-size: 1rem;
+}
