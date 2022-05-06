@@ -1,22 +1,45 @@
-import React from "react";
-import './navbar.css';
+import React, { useState, useEffect } from "react";
+import "./navbar.css";
 
 function Navbar() {
+  // const [dark, handleShow] = useState(false);
+
+  // useEffect(() => {
+  //   window.addEventListener("scroll", () => {
+  //     if (window.scrollY > 100) {
+  //       handleDark(true);
+  //     } else handleDark(false);
+  //   });
+  //   return () => {
+  //     window.removeEventListener("scroll");
+  //   };
+  // }, []);
+
+  const [colorChange, setColorchange] = useState(false);
+
+  const changeNavbarColor = () =>{
+    if(window.scrollY >= 80){
+      setColorchange(true);
+    }
+    else{
+      setColorchange(false);
+    }
+ };
+ window.addEventListener('scroll', changeNavbarColor);
+
   return (
-    <div className="navbar">
-      <div className="navbar-container">
-        <div className="navbar-logo">
-          <img src="https://i.ibb.co/P1tMz4j/netflix-PNG25.png" alt="logo" />
-        </div>
-        <div className="navbar-links">
-          <div className="navbar-link">
-            <a href="/">Home</a>
-          </div>
-          <div className="navbar-link">
-            <a href="/">Browse Categories</a>
-          </div>
-        </div>
-      </div>
+    <div className={`navbar ${colorChange && "nav_dark"}`}>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1920px-Netflix_2015_logo.svg.png"
+        alt="netflix__logo"
+        className="netflix_logo"
+      />
+
+      <img
+        src="https://ih0.redbubble.net/image.618427277.3222/flat,1000x1000,075,f.u2.jpg"
+        alt="userlogo"
+        className="user_logo"
+      />
     </div>
   );
 }

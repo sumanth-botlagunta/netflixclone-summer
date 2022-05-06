@@ -1,11 +1,32 @@
 .navbar{
-    width: 100%;
-    height: 60px;
-    background-color: #fff;
-    display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  z-index: 1000;
+  height: 30px;
+  padding: 20px;
+
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
 }
-.navbar-logo > img {
-  width: 167px;
-  height: 55px;
-  
+
+.nav_dark{
+  height: 50px;
+  background-color: #111;
+}
+
+.netflix_logo{
+  position: fixed;
+  left: 20px;
+  object-fit: contain;
+  width: 80px;
+}
+
+.user_logo{
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  object-fit: contain;
+  width: 30px;
 }
