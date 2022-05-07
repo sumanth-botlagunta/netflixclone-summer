@@ -2,30 +2,18 @@ import React, { useState, useEffect } from "react";
 import "./navbar.css";
 
 function Navbar() {
-  // const [dark, handleShow] = useState(false);
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", () => {
-  //     if (window.scrollY > 100) {
-  //       handleDark(true);
-  //     } else handleDark(false);
-  //   });
-  //   return () => {
-  //     window.removeEventListener("scroll");
-  //   };
-  // }, []);
 
   const [colorChange, setColorchange] = useState(false);
 
-  const changeNavbarColor = () =>{
-    if(window.scrollY >= 80){
+  const changeNavbarColor = () => {
+    if (window.scrollY >= 80) {
       setColorchange(true);
     }
-    else{
+    else {
       setColorchange(false);
     }
- };
- window.addEventListener('scroll', changeNavbarColor);
+  };
+  window.addEventListener('scroll', changeNavbarColor);
 
   return (
     <div className={`navbar ${colorChange && "nav_dark"}`}>
